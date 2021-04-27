@@ -24,4 +24,18 @@ plot(x=1:length(Filtrado[,1]),Filtrado$Sub_metering_1,type = "l", xlab = "",ylab
 points(x=1:length(Filtrado[,1]),Filtrado$Sub_metering_2,type = "l", xlab = "", xaxt="n", col="red")
 points(x=1:length(Filtrado[,1]),Filtrado$Sub_metering_3,type = "l", xlab = "", xaxt="n", col="blue")
 axis(1,labels = c("Thu","Fri","Sat"), at=c(1,1440,2800))
+legend("topright", legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("darkgrey","red","blue"),lty=1)
+dev.off()
+
+
+
+#Last histogram
+
+
+
+
+
+
+
+
 
