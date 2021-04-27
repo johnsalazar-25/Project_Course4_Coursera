@@ -31,11 +31,36 @@ dev.off()
 
 #Last histogram
 
+par(mfrow=c(2,2))
+
+#4.1
+png("plot4.1.png",width = 480, height = 480)
+plot(1:length(Filtrado[,1]),Filtrado$Global_active_power, type = "l", xlab = "",ylab = "Global Active Power (kilowatts)", xaxt="n")
+axis(1,labels = c("Thu","Fri","Sat"), at=c(1,1440,2800))
+dev.off()
+
+#4.2
+png("plot4.2.png",width = 480, height = 480)
+plot(x=1:length(Filtrado[,1]), Filtrado$Voltage,type = "l",ylab = "Voltage",xlab="datetime",xaxt="n")
+axis(1,labels = c("Thu","Fri","Sat"), at=c(1,1440,2800))
+dev.off()
 
 
 
+#4.3
+png("plot4.3.png",width = 480, height = 480)
+plot(x=1:length(Filtrado[,1]),Filtrado$Sub_metering_1,type = "l", xlab = "",ylab = "Energy Sub metering", xaxt="n", col="darkgrey")
+points(x=1:length(Filtrado[,1]),Filtrado$Sub_metering_2,type = "l", xlab = "", xaxt="n", col="red")
+points(x=1:length(Filtrado[,1]),Filtrado$Sub_metering_3,type = "l", xlab = "", xaxt="n", col="blue")
+axis(1,labels = c("Thu","Fri","Sat"), at=c(1,1440,2800))
+legend("topright", legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("darkgrey","red","blue"),lty=1)
+dev.off()
 
 
-
+#4.4
+png("plot4.3.png",width = 480, height = 480)
+plot(x=1:length(Filtrado[,1]), Filtrado$Global_reactive_power,type = "l",ylab = "Global_reactive_power",xlab="datetime",xaxt="n")
+axis(1,labels = c("Thu","Fri","Sat"), at=c(1,1440,2800))
+dev.off()
 
 
