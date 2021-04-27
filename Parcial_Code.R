@@ -5,3 +5,9 @@ Household <- read_delim("~/Desktop/Programas_R/Course_4/household_power_consumpt
 #Create a superior and inferior limit.
 Inferior <- as.numeric(as.Date("2007-02-01"))
 Superior <- as.numeric(as.Date("2007-02-02"))
+Filtrado <- Household[(as.numeric(Household$Date)>=Inferior) & (as.numeric(Household$Date)<=Inferior),]
+
+#First Histogram
+hist(Filtrado$Global_active_power, xlab="Global Active Power (kilowatts)",col="red",main="Global Active Power")
+
+#Add first plot to png.
